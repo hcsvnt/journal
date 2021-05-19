@@ -1,6 +1,6 @@
 import React from 'react';
 import './layout.css';
-import * as type from './type.module.css';
+// import * as type from './type.module.css';
 
 
 const Layout = ({children}) => {

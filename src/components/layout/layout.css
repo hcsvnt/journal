@@ -1,8 +1,8 @@
 
 @import url("https://use.typekit.net/hjs4cjc.css");
 
-/* font-family: tablet-gothic, sans-serif;
-font-family: astoria, sans-serif; 
+/* font-family: tablet-gothic, sans-serif; 400, 600, 700
+font-family: astoria, sans-serif;  200, 300, ?600?
 also italic */
 
 * {
@@ -16,9 +16,20 @@ also italic */
     --ff-bold: tablet-gothic, sans-serif;
 }
 
-body {
-    font-size: 16px;
+/* .mainText {
     font-family: var(--ff-main);
+    font-weight: 200;
+}
+
+.boldText {
+    font-family: var(--ff-bold);
+    font-weight: 900;
+} */
+
+body {
+    font-family: var(--ff-main);
+    font-size: 16px;
+    font-weight: 200;
 }
 
 .container {
