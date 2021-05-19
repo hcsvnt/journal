@@ -3,20 +3,20 @@ module.exports = {
     title: "journal",
   },
   plugins: [
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        accessToken: "",
-        spaceId: "",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-contentful",
+    //   options: {
+    //     accessToken: "",
+    //     spaceId: "",
+    //   },
+    // },
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "",
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "",
+    //   },
+    // },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {

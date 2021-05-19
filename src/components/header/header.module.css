@@ -1,0 +1,7 @@
+.header {
+    /* composes: boldText from '../layout/type.module.css;'; */
+    background-color: aqua;
+    width: 100%;
+    height: 100px;
+    font-family: var(--ff-bold);
+}

@@ -1,0 +1,12 @@
+
+.mainText {
+    font-family: var(--ff-main);
+    font-weight: 200;
+    color: chartreuse;
+}
+
+.boldText {
+    composes: mainText;
+    font-family: var(--ff-bold);
+    font-weight: 900;
+}
