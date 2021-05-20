@@ -5,7 +5,6 @@
 
 .top {
     display: flex;
-    z-index: 10;
 }
 
 .square {
@@ -34,21 +33,17 @@
     justify-self: end;
 }
 
-.bottom {
-    /* z-index: 1;
-    display: none;
-    transform: translateY(-50%);
-    opacity: 20%; */
+.navBar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-out;
 }
 
-.bottomInvisible {
-    display: none;
+.navBarActive {
+   max-height: 4.5em;
 }
 
-.bottomVisible {
-    transform: translateY(0);
-    background: chartreuse;
-}
+
 
 .nav {
     /* background: chartreuse; */

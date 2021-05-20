@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import * as styles from './header.module.css';
 
 
-const Bottom = () => {
+const NavBar = ({className}) => {
     return (
-        <div className={styles.bottom}>
+        // <div className={styles.navBar}>
+        <div className={className}>
                 <nav className={styles.nav}>
                     <span>
                         about
@@ -32,14 +33,15 @@ const Bottom = () => {
 
 
 const Header = () => {
-    const [bottomVisible, setBottomVisible] = useState(false);
+    // const [bottomVisible, setBottomVisible] = useState(false);
+    const [navBarActive, setNavBarActive] = useState(false);
     
     function showBottom() {
-        setBottomVisible(!bottomVisible);
-        console.log("przeciezklikam")
+        setNavBarActive(!navBarActive);
     };
 
-    // let visible = 
+    let navClass =  navBarActive ? `${styles.navBar} ${styles.navBarActive}` : styles.navBar;
+    // let navClass = styles.navBar;
 
   return (
         <header className={styles.header}>
@@ -53,8 +55,11 @@ const Header = () => {
                 </p>
             </div>
             {/* how to make this better for accessibility? */}
-            { bottomVisible ? <Bottom /> : null } 
+            {/* { bottomVisible ? <Bottom /> : null }  */}
             {/* <Bottom className={ bottomVisible ? styles.bottomVisible : styles.bottomInvisible } /> */}
+            <NavBar
+                className={navClass}
+             />
             
         </header>
   )
