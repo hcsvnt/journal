@@ -1,6 +1,11 @@
 .header {
     /* background-color: aqua; */
     width: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .top {
@@ -34,6 +39,7 @@
 }
 
 .navBar {
+    background: white;
     transform: translateX(100%) scaleY(0);
     transform-origin: right;
     transition: transform 300ms ease-out;
@@ -57,10 +63,16 @@
 
 .filterBar {
     /* background: chartreuse; */
-    padding: 0.5em;
     display: flex;
     justify-content: space-evenly;
     /* below is just temporary before they're links */
     font-weight: 300;
     text-decoration: underline;
+    opacity: 0;
+    transition: 300ms opacity ease-in-out;
+    padding-bottom: 1em;
+}
+
+.filterBarActive {
+    opacity: 1;
 }

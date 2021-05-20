@@ -3,21 +3,21 @@ import { Link } from 'gatsby';
 import * as styles from './header.module.css';
 
 
-const NavBar = ({className}) => {
+const NavBar = ({ showFilterBar, navBarClass, filterBarClass}) => {
     return (
-        <div className={className}>
+        <div className={navBarClass}>
                 <nav className={styles.nav}>
                     <Link to='/about'>
                         about
                     </Link>
-                    <span>
+                    <button onClick={showFilterBar}>
                         filters
-                    </span>
+                    </button>
                     <span>
                         dark
                     </span>
                 </nav>
-                <div className={styles.filterBar}>
+                <div className={filterBarClass}>
                     <span>
                         {/* these items need to be lists */}
                         order 
@@ -35,19 +35,29 @@ const NavBar = ({className}) => {
 const Header = () => {
     // const [bottomVisible, setBottomVisible] = useState(false);
     const [navBarActive, setNavBarActive] = useState(false);
+    const [filterBarActive, setFilterBarActive] = useState(false);
     
     function showNavBar() {
         setNavBarActive(!navBarActive);
+        if (filterBarActive) setFilterBarActive(false)
     };
 
-    let navClass =  navBarActive ? `${styles.navBar} ${styles.navBarActive}` : styles.navBar;
+    function showFilterBar() {
+        setFilterBarActive(!filterBarActive);
+        console.log('klyk')
+    }
+
+    let navBarClass =  navBarActive ? `${styles.navBar} ${styles.navBarActive}` : styles.navBar;
+    let filterBarClass = filterBarActive ? `${styles.filterBar} ${styles.filterBarActive}` : styles.filterBar;
 
   return (
         <header className={styles.header}>
             <div className={styles.top}>
                 <div className={styles.square}></div>
                 <p className={styles.headerTitle}>
-                    Journal
+                    <Link to='/'>
+                        Journal
+                    </Link>
                 </p>
                 <button className={styles.plus} onClick={showNavBar}>
                     +
@@ -55,7 +65,9 @@ const Header = () => {
             </div>
             
             <NavBar
-                className={navClass}
+                showFilterBar={showFilterBar}
+                navBarClass={navBarClass}
+                filterBarClass={filterBarClass}
              />
         </header>
   )
