@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import * as styles from './header.module.css';
 
 
 const NavBar = ({className}) => {
     return (
-        // <div className={styles.navBar}>
         <div className={className}>
                 <nav className={styles.nav}>
-                    <span>
+                    <Link to='/about'>
                         about
-                    </span>
+                    </Link>
                     <span>
                         filters
                     </span>
@@ -36,12 +36,11 @@ const Header = () => {
     // const [bottomVisible, setBottomVisible] = useState(false);
     const [navBarActive, setNavBarActive] = useState(false);
     
-    function showBottom() {
+    function showNavBar() {
         setNavBarActive(!navBarActive);
     };
 
     let navClass =  navBarActive ? `${styles.navBar} ${styles.navBarActive}` : styles.navBar;
-    // let navClass = styles.navBar;
 
   return (
         <header className={styles.header}>
@@ -50,17 +49,14 @@ const Header = () => {
                 <p className={styles.headerTitle}>
                     Journal
                 </p>
-                <p className={styles.plus} onClick={showBottom}>
+                <button className={styles.plus} onClick={showNavBar}>
                     +
-                </p>
+                </button>
             </div>
-            {/* how to make this better for accessibility? */}
-            {/* { bottomVisible ? <Bottom /> : null }  */}
-            {/* <Bottom className={ bottomVisible ? styles.bottomVisible : styles.bottomInvisible } /> */}
+            
             <NavBar
                 className={navClass}
              />
-            
         </header>
   )
 };

@@ -37,3 +37,15 @@ body {
     height: 100%;
 }
 
+/* global button style reset */
+button {
+    background: inherit;
+    color: inherit;
+    outline: none;
+    border: none;
+}
+
+/* global link style reset */
+a {
+    color: inherit;
+}

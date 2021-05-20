@@ -34,15 +34,15 @@
 }
 
 .navBar {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 200ms ease-out;
+    transform: translateX(100%) scaleY(0);
+    transform-origin: right;
+    transition: transform 300ms ease-out;
 }
 
 .navBarActive {
-   max-height: 4.5em;
+   transform: translateX(0) scaleY(1);
+   
 }
-
 
 
 .nav {
