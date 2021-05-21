@@ -14,6 +14,18 @@ also italic */
 :root {
     --ff-main: astoria, sans-serif;
     --ff-bold: tablet-gothic, sans-serif;
+    --clr-bg: white;
+    --clr-main: black;
+    --clr-acc1: orangered;
+    --fw-regular: 200;
+    --fw-bold: 900;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* --clr-bg: #0c0c0c;
+        --clr-main: #f0f0f0; */
+    }
 }
 
 /* .mainText {
@@ -29,7 +41,9 @@ also italic */
 body {
     font-family: var(--ff-main);
     font-size: 16px;
-    font-weight: 200;
+    font-weight: var(--fw-regular);
+    color: var(--clr-main);
+    background: var(--clr-bg);
 }
 
 .container {
@@ -43,10 +57,18 @@ button {
     color: inherit;
     outline: none;
     border: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
 }
 
 /* global link style reset */
 a {
     color: inherit;
     text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
 }

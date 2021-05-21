@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'gatsby';
 import * as styles from './header.module.css';
+import ThemeContext from '../layout'
 
 
 const NavBar = ({ showFilterBar, navBarClass, filterBarClass}) => {
+    const themeData = useContext(ThemeContext);
+
     return (
         <div className={navBarClass}>
                 <nav className={styles.nav}>
