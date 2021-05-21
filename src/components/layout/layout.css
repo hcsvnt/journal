@@ -21,13 +21,6 @@ also italic */
     --fw-bold: 900;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* --clr-bg: #0c0c0c;
-        --clr-main: #f0f0f0; */
-    }
-}
-
 /* .mainText {
     font-family: var(--ff-main);
     font-weight: 200;

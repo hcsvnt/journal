@@ -15,7 +15,7 @@
 .square {
     width: 1.5rem;
     height: 1.5rem;
-    background: black;
+    background: var(--clr-main);
     margin: 0.5em;
 }
 

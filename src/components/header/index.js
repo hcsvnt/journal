@@ -1,12 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'gatsby';
 import * as styles from './header.module.css';
-import ThemeContext from '../layout'
+import { ThemeContext } from '../../hookers/themeContext';
 
 
 const NavBar = ({ showFilterBar, navBarClass, filterBarClass}) => {
-    const themeData = useContext(ThemeContext);
-
+    const themeData = useContext(ThemeContext)
+    const {theme, setTheme} = themeData;
+    const manualThemeToggle = () => {
+        if (theme === 'light') setTheme('dark');
+        if (theme === 'dark') setTheme('light');
+    };
+    
     return (
         <div className={navBarClass}>
                 <nav className={styles.nav}>
@@ -16,7 +21,7 @@ const NavBar = ({ showFilterBar, navBarClass, filterBarClass}) => {
                     <button onClick={showFilterBar}>
                         filters
                     </button>
-                    <span>
+                    <span onClick={manualThemeToggle}>
                         dark
                     </span>
                 </nav>
