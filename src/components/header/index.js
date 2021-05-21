@@ -1,44 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'gatsby';
+import Navbar from '../navbar';
 import * as styles from './header.module.css';
-import { ThemeContext } from '../../hookers/themeContext';
-
-
-const NavBar = ({ showFilterBar, navBarClass, filterBarClass}) => {
-    const themeData = useContext(ThemeContext)
-    const {theme, setTheme} = themeData;
-    const manualThemeToggle = () => {
-        if (theme === 'light') setTheme('dark');
-        if (theme === 'dark') setTheme('light');
-    };
-    
-    return (
-        <div className={navBarClass}>
-                <nav className={styles.nav}>
-                    <Link to='/about'>
-                        about
-                    </Link>
-                    <button onClick={showFilterBar}>
-                        filters
-                    </button>
-                    <span onClick={manualThemeToggle}>
-                        dark
-                    </span>
-                </nav>
-                <div className={filterBarClass}>
-                    <span>
-                        {/* these items need to be lists */}
-                        order 
-                    </span>
-                    <span>
-                        {/* a multi selector list, who dis? */}
-                        tags
-                    </span>
-                </div>
-            </div>
-    )
-}
-
 
 const Header = () => {
     // const [bottomVisible, setBottomVisible] = useState(false);
@@ -53,7 +16,7 @@ const Header = () => {
     function showFilterBar() {
         setFilterBarActive(!filterBarActive);
         console.log('klyk')
-    }
+    };
 
     let navBarClass =  navBarActive ? `${styles.navBar} ${styles.navBarActive}` : styles.navBar;
     let filterBarClass = filterBarActive ? `${styles.filterBar} ${styles.filterBarActive}` : styles.filterBar;
@@ -72,7 +35,7 @@ const Header = () => {
                 </button>
             </div>
             
-            <NavBar
+            <Navbar
                 showFilterBar={showFilterBar}
                 navBarClass={navBarClass}
                 filterBarClass={filterBarClass}

@@ -3,7 +3,6 @@ import { ThemeContext } from '../../hookers/themeContext';
 import './layout.css';
 // import * as type from './type.module.css';
 
-
 const lightThemeValues = {
   '--clr-bg': 'white',
   '--clr-main': 'black'
